@@ -9,6 +9,8 @@
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
+# View component to represent flip card game
+
 A minimal skeleton for building testable React apps using Babel.
 
 - [Design Goals](#design-goals)
