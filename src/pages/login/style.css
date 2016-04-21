@@ -1,28 +1,67 @@
 .content {
-  margin-top: 50px;
+    margin-top: 50px;
 }
 
 .heading {
-  font-size: 10vw;
+    font-size: 10vw;
 }
 
 .lead {
-  display: inline-block;
-  margin-right: 20px;
-  font-size: 3vw;
+    display: inline-block;
+    margin-right: 20px;
+    font-size: 3vw;
 }
 
 .signUpButton {
-  display: inline-block;
-  padding: 1vw 2vw;
-  border: 0;
-  font-size: 2vw;
+    display: inline-block;
+    padding: 1vw 2vw;
+    border: 0;
+    font-size: 2vw;
 
-  background-color: #4B9DA3;
-  color: #f3f3f3;
+    background-color: #4B9DA3;
+    color: #f3f3f3;
 
-  cursor: pointer;
-  border-radius: 2px;
-  text-shadow: 0px 1px 1px rgba(0,0,0,0.5);
-  box-shadow: 0px 5px 25px -5px rgba(0,0,0,0.5);
+    cursor: pointer;
+    border-radius: 2px;
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 5px 25px -5px rgba(0, 0, 0, 0.5);
+}
+
+/*=========*/
+
+.cardcontainer {
+    width: 200px;
+    height: 260px;
+    position: relative;
+    perspective: 800px;
+}
+
+:global(#card) {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+}
+
+:global(#card) figure {
+    margin: 0;
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+:global(#card) .front {
+    background: red;
+}
+
+:global(#card) .back {
+    background: blue;
+    transform: rotateY(180deg);
+}
+
+:global(#card) .flipped {
+    transform: rotateY(180deg);
 }
