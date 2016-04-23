@@ -62,6 +62,6 @@
     transform: rotateY(180deg);
 }
 
-:global(#card) .flipped {
+:global(#card).flipped {
     transform: rotateY(180deg);
 }

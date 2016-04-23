@@ -26,8 +26,7 @@ export default class LoginPage extends React.Component {
     }
 
     render() {
-        const s = this.state.cardFlipped ? styles.flipped : '';
-
+        const cardClass = this.state.cardFlipped ? styles.flipped : '';
         return (
             <div className={styles.content}>
                 <h1 className={styles.heading}>Login Page</h1>
@@ -38,7 +37,7 @@ export default class LoginPage extends React.Component {
 
                 <section className={styles.cardcontainer}
                          onClick={this.onFlipHandler}>
-                    <div id="card" className={s}>
+                    <div id="card" className={cardClass}>
                         <figure className={styles.front}>1</figure>
                         <figure className={styles.back}>2</figure>
                     </div>
