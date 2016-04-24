@@ -3,7 +3,6 @@ import Card from '../../components/card/Card';
 import { browserHistory } from 'react-router';
 import styles from './style.css';
 
-
 export default class LoginPage extends React.Component {
 
     constructor(props) {
@@ -13,13 +12,11 @@ export default class LoginPage extends React.Component {
             cardFlipped: false
         };
 
-        this.onFlipHandler = this.onFlipHandler.bind(this);
+        this.onClickHandler = this.onClickHandler.bind(this);
     }
 
-    onFlipHandler() {
-        this.setState({
-            cardFlipped: !this.state.cardFlipped
-        });
+    onClickHandler() {
+        console.log('Clicked');
     }
 
     signUp() {
@@ -27,7 +24,6 @@ export default class LoginPage extends React.Component {
     }
 
     render() {
-        const cardClass = this.state.cardFlipped ? styles.flipped : '';
         return (
             <div className={styles.content}>
                 <h1 className={styles.heading}>Login Page</h1>
@@ -36,9 +32,9 @@ export default class LoginPage extends React.Component {
                     Sign up
                 </button>
 
+                <Card flipped={true} onClick={this.onClickHandler}/>
                 <Card/>
-                <Card/>
-                <Card/>
+                <Card flipped={true}/>
 
             </div>
         );

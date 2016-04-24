@@ -2,33 +2,35 @@ import classNames from 'classnames';
 import React from 'react';
 import styles from './card.css';
 
-export default class Card extends React.Component {
+class Card extends React.Component {
 
     constructor(props) {
         super(props);
 
         this.state = {
-            cardFlipped: false
+            flipped: props.flipped
         };
 
-        this.onFlipHandler = this.onFlipHandler.bind(this);
+        this.onClickHandler = this.onClickHandler.bind(this);
     }
 
-    onFlipHandler() {
+    onClickHandler() {
+        this.props.onClick();
+
         this.setState({
-            cardFlipped: !this.state.cardFlipped
+            flipped: !this.state.flipped
         });
     }
 
     render() {
         const cardClass = classNames({
             [styles.card]: true,
-            [styles.flipped]: this.state.cardFlipped
+            [styles.flipped]: this.state.flipped
         });
 
         return (
             <div className={styles.cardcontainer}
-                 onClick={this.onFlipHandler}>
+                 onClick={this.onClickHandler}>
                 <div id="card" className={cardClass}>
                     <figure className={styles.front}>1</figure>
                     <figure className={styles.back}>2</figure>
@@ -37,3 +39,11 @@ export default class Card extends React.Component {
         );
     }
 }
+
+Card.defaultProps = {
+    flipped: false,
+    onClick: function () {
+    }
+};
+
+export default Card;
