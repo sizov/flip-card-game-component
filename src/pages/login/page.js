@@ -8,6 +8,12 @@ export default class LoginPage extends React.Component {
     constructor(props) {
         super(props);
 
+        //function getCard() {
+        //    return {
+        //        flipped: false
+        //    }
+        //}
+
         this.state = {
             cardFlipped: false
         };
@@ -16,7 +22,9 @@ export default class LoginPage extends React.Component {
     }
 
     onClickHandler() {
-        console.log('Clicked');
+        this.setState({
+            cardFlipped: !this.state.cardFlipped
+        });
     }
 
     signUp() {
@@ -32,7 +40,8 @@ export default class LoginPage extends React.Component {
                     Sign up
                 </button>
 
-                <Card flipped={true} onClick={this.onClickHandler}/>
+                <Card flipped={this.state.cardFlipped}
+                      onClick={this.onClickHandler}/>
                 <Card/>
                 <Card flipped={true}/>
 

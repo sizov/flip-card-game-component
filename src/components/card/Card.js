@@ -7,25 +7,17 @@ class Card extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-            flipped: props.flipped
-        };
-
         this.onClickHandler = this.onClickHandler.bind(this);
     }
 
     onClickHandler() {
         this.props.onClick();
-
-        this.setState({
-            flipped: !this.state.flipped
-        });
     }
 
     render() {
         const cardClass = classNames({
             [styles.card]: true,
-            [styles.flipped]: this.state.flipped
+            [styles.flipped]: this.props.flipped
         });
 
         return (
