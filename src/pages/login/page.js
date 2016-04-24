@@ -1,4 +1,5 @@
 import React from 'react';
+import Card from '../../components/card/Card';
 import { browserHistory } from 'react-router';
 import styles from './style.css';
 
@@ -35,13 +36,9 @@ export default class LoginPage extends React.Component {
                     Sign up
                 </button>
 
-                <section className={styles.cardcontainer}
-                         onClick={this.onFlipHandler}>
-                    <div id="card" className={cardClass}>
-                        <figure className={styles.front}>1</figure>
-                        <figure className={styles.back}>2</figure>
-                    </div>
-                </section>
+                <Card/>
+                <Card/>
+                <Card/>
 
             </div>
         );
