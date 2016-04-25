@@ -52,14 +52,12 @@ export default class LoginPage extends React.Component {
 
     render() {
         const that = this;
-        const cardNodes = this.state.cards.map(function (cardData) {
-            return (
-                <Card data={cardData}
-                      key={cardData.id}
-                      onClick={that.onClickHandler}>
-                </Card>
-            );
-        });
+        const cardNodes = this.state.cards.map((cardData) => (
+            <Card data={cardData}
+                  key={cardData.id}
+                  onClick={that.onClickHandler}>
+            </Card>
+        ));
 
         return (
             <div className={styles.content}>
