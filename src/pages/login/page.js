@@ -23,14 +23,13 @@ export default class LoginPage extends React.Component {
     constructor(props) {
         super(props);
 
-        function getCard(flipped) {
-            return {
-                flipped: !!flipped
-            }
-        }
+        const getCard = (flipped, id) => ({
+            id,
+            flipped: !!flipped
+        });
 
         this.state = {
-            cards: [getCard(true), getCard(false), getCard(true)]
+            cards: [getCard(true, 0), getCard(false, 1), getCard(true, 2)]
         };
 
         this.onClickHandler = this.onClickHandler.bind(this);
@@ -52,13 +51,11 @@ export default class LoginPage extends React.Component {
     }
 
     render() {
-        console.log(this.state);
-
         const that = this;
-
         const cardNodes = this.state.cards.map(function (cardData) {
             return (
                 <Card data={cardData}
+                      key={cardData.id}
                       onClick={that.onClickHandler}>
                 </Card>
             );
