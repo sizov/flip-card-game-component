@@ -11,13 +11,13 @@ class Card extends React.Component {
     }
 
     onClickHandler() {
-        this.props.onClick();
+        this.props.onClick(this.props.data);
     }
 
     render() {
         const cardClass = classNames({
             [styles.card]: true,
-            [styles.flipped]: this.props.flipped
+            [styles.flipped]: this.props.data.flipped
         });
 
         return (
@@ -33,7 +33,9 @@ class Card extends React.Component {
 }
 
 Card.defaultProps = {
-    flipped: false,
+    data: {
+        flipped: false
+    },
     onClick: function () {
     }
 };

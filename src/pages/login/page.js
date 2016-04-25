@@ -3,27 +3,47 @@ import Card from '../../components/card/Card';
 import { browserHistory } from 'react-router';
 import styles from './style.css';
 
+//FIXME: move to utils or use immutable.js
+function immutableUpdate(source, params) {
+    const result = [];
+
+    source.forEach(function (item) {
+        let itemToSave = item;
+        if (item === params.item) {
+            itemToSave = Object.assign(params.item, params.update);
+        }
+        result.push(itemToSave);
+    });
+
+    return result;
+}
+
 export default class LoginPage extends React.Component {
 
     constructor(props) {
         super(props);
 
-        //function getCard() {
-        //    return {
-        //        flipped: false
-        //    }
-        //}
+        function getCard(flipped) {
+            return {
+                flipped: !!flipped
+            }
+        }
 
         this.state = {
-            cardFlipped: false
+            cards: [getCard(true), getCard(false), getCard(true)]
         };
 
         this.onClickHandler = this.onClickHandler.bind(this);
     }
 
-    onClickHandler() {
+    onClickHandler(cardData) {
         this.setState({
-            cardFlipped: !this.state.cardFlipped
+            cards: immutableUpdate(this.state.cards, {
+                item: cardData,
+                update: {
+                    flipped: !cardData.flipped
+                }
+            })
         });
     }
 
@@ -32,18 +52,23 @@ export default class LoginPage extends React.Component {
     }
 
     render() {
+        console.log(this.state);
+
+        const that = this;
+
+        const cardNodes = this.state.cards.map(function (cardData) {
+            return (
+                <Card data={cardData}
+                      onClick={that.onClickHandler}>
+                </Card>
+            );
+        });
+
         return (
             <div className={styles.content}>
-                <h1 className={styles.heading}>Login Page</h1>
-                <p className={styles.lead}>Create an account to get started!</p>
-                <button className={styles.signUpButton} onClick={this.signUp}>
-                    Sign up
-                </button>
-
-                <Card flipped={this.state.cardFlipped}
-                      onClick={this.onClickHandler}/>
-                <Card/>
-                <Card flipped={true}/>
+                <div>
+                    {cardNodes}
+                </div>
 
             </div>
         );
