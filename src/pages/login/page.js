@@ -29,7 +29,14 @@ export default class LoginPage extends React.Component {
         });
 
         this.state = {
-            cards: [getCard(true, 0), getCard(false, 1), getCard(true, 2)]
+            cards: [
+                getCard(false, '0'),
+                getCard(true, '1'),
+                getCard(false, '2'),
+                getCard(true, '3'),
+                getCard(false, '4'),
+                getCard(true, '5')
+            ]
         };
 
         this.onClickHandler = this.onClickHandler.bind(this);

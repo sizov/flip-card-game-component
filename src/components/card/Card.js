@@ -24,8 +24,8 @@ class Card extends React.Component {
             <div className={styles.cardcontainer}
                  onClick={this.onClickHandler}>
                 <div id="card" className={cardClass}>
-                    <figure className={styles.front}>1</figure>
-                    <figure className={styles.back}>2</figure>
+                    <figure className={styles.front}>?</figure>
+                    <figure className={styles.back}>{this.props.data.id}</figure>
                 </div>
             </div>
         );
