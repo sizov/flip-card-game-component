@@ -1,19 +1,17 @@
 import React from 'react';
-import GameBoard from '../../components/gameBoard/GameBoard';
+import CardsBoard from '../../components/cardsBoard/CardsBoard';
 import { browserHistory } from 'react-router';
 import styles from './style.css';
 
-const getCard = (flipped, id) => ({
-    id,
-    flipped: !!flipped
-});
+const rndBool = () => !!Math.round(Math.random());
+const getCard = (flipped, id) => ({id, flipped});
 
 function getCards() {
     const result = [];
     const l = 10 + Math.round(Math.random() * 10);
 
     for (let i = 0; i < l; i++) {
-        result.push(getCard(!!Math.round(Math.random()), i.toString()));
+        result.push(getCard(rndBool(), i.toString()));
     }
 
     return result;
@@ -40,16 +38,19 @@ export default class LoginPage extends React.Component {
         super(props);
 
         this.state = {
-            game: {
-                cards: getCards()
-            }
+            cards: getCards()
         };
 
         this.onCardClickHandler = this.onCardClickHandler.bind(this);
     }
 
     onCardClickHandler(cardData) {
-        const cards = immutableUpdate(this.state.game.cards, {
+        if (rndBool()) {
+            alert('can\'t flip');
+            return;
+        }
+
+        const cards = immutableUpdate(this.state.cards, {
             item: cardData,
             update: {
                 flipped: !cardData.flipped
@@ -57,14 +58,14 @@ export default class LoginPage extends React.Component {
         });
 
         this.setState({
-            game: {cards}
+            cards
         });
     }
 
     render() {
         return (
-            <GameBoard game={this.state.game}
-                       onCardClick={this.onCardClickHandler}/>
+            <CardsBoard cards={this.state.cards}
+                        onCardClick={this.onCardClickHandler}/>
         );
     }
 }

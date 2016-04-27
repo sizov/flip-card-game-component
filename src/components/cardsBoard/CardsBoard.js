@@ -1,8 +1,8 @@
 import React from 'react';
 import Card from '../../components/card/Card';
-import styles from './gameBoard.css';
+import styles from './cardsBoard.css';
 
-class GameBoard extends React.Component {
+class CardsBoard extends React.Component {
 
     constructor(props) {
         super(props);
@@ -16,7 +16,7 @@ class GameBoard extends React.Component {
 
     render() {
         const that = this;
-        const cardNodes = this.props.game.cards.map((cardData) => (
+        const cardNodes = this.props.cards.map((cardData) => (
             <Card data={cardData}
                   key={cardData.id}
                   onClick={that.onClickHandler}>
@@ -34,10 +34,10 @@ class GameBoard extends React.Component {
     }
 }
 
-GameBoard.defaultProps = {
-    game: {},
+CardsBoard.defaultProps = {
+    cards: [],
     onCardClick: function () {
     }
 };
 
-export default GameBoard;
+export default CardsBoard;
