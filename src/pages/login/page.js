@@ -8,14 +8,16 @@ const getCard = (flipped, id) => ({
     flipped: !!flipped
 });
 
-const getCards = () => ([
-    getCard(false, '0'),
-    getCard(true, '1'),
-    getCard(false, '2'),
-    getCard(true, '3'),
-    getCard(false, '4'),
-    getCard(true, '5')
-]);
+function getCards() {
+    const result = [];
+    const l = 10 + Math.round(Math.random() * 10);
+
+    for (let i = 0; i < l; i++) {
+        result.push(getCard(!!Math.round(Math.random()), i.toString()));
+    }
+
+    return result;
+}
 
 //FIXME: move to utils or use immutable.js
 function immutableUpdate(source, params) {
@@ -29,8 +31,6 @@ function immutableUpdate(source, params) {
         result.push(itemToSave);
     });
 
-    this.onCardClickHandler = this.onCardClickHandler.bind(this);
-
     return result;
 }
 
@@ -43,19 +43,21 @@ export default class LoginPage extends React.Component {
             game: {
                 cards: getCards()
             }
-        }
+        };
+
+        this.onCardClickHandler = this.onCardClickHandler.bind(this);
     }
 
     onCardClickHandler(cardData) {
-        this.setState({
-            game: {
-                cards: immutableUpdate(this.state.game.cards, {
-                    item: cardData,
-                    update: {
-                        flipped: !cardData.flipped
-                    }
-                })
+        const cards = immutableUpdate(this.state.game.cards, {
+            item: cardData,
+            update: {
+                flipped: !cardData.flipped
             }
+        });
+
+        this.setState({
+            game: {cards}
         });
     }
 
