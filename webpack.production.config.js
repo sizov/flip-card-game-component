@@ -14,7 +14,7 @@ module.exports = {
 
     output: {
         path: __dirname + "/dist/",
-        filename: "flip-card-gane-component.js"
+        filename: "flip-card-game-component.js"
     },
 
     plugins: [
