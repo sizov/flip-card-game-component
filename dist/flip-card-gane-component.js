@@ -49,15 +49,14 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.FlipCardGame = undefined;
 
-	var _CardsBoard = __webpack_require__(1);
+	var _FlipCardBoard = __webpack_require__(1);
 
-	var _CardsBoard2 = _interopRequireDefault(_CardsBoard);
+	var _FlipCardBoard2 = _interopRequireDefault(_FlipCardBoard);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	exports.FlipCardGame = _CardsBoard2.default;
+	exports.default = _FlipCardBoard2.default;
 
 /***/ },
 /* 1 */
@@ -97,25 +96,25 @@
 
 	var _Card2 = _interopRequireDefault(_Card);
 
-	var _cardsBoard = __webpack_require__(12);
+	var _flipCardBoard = __webpack_require__(12);
 
-	var _cardsBoard2 = _interopRequireDefault(_cardsBoard);
+	var _flipCardBoard2 = _interopRequireDefault(_flipCardBoard);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var CardsBoard = function (_React$Component) {
-	    (0, _inherits3.default)(CardsBoard, _React$Component);
+	var FlipCardBoard = function (_React$Component) {
+	    (0, _inherits3.default)(FlipCardBoard, _React$Component);
 
-	    function CardsBoard(props) {
-	        (0, _classCallCheck3.default)(this, CardsBoard);
+	    function FlipCardBoard(props) {
+	        (0, _classCallCheck3.default)(this, FlipCardBoard);
 
-	        var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(CardsBoard).call(this, props));
+	        var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(FlipCardBoard).call(this, props));
 
 	        _this.onClickHandler = _this.onClickHandler.bind(_this);
 	        return _this;
 	    }
 
-	    (0, _createClass3.default)(CardsBoard, [{
+	    (0, _createClass3.default)(FlipCardBoard, [{
 	        key: 'onClickHandler',
 	        value: function onClickHandler(cardData) {
 	            this.props.onCardClick(cardData);
@@ -132,7 +131,7 @@
 
 	            return _react2.default.createElement(
 	                'div',
-	                { className: _cardsBoard2.default.content },
+	                { className: _flipCardBoard2.default.content },
 	                _react2.default.createElement(
 	                    'div',
 	                    null,
@@ -141,15 +140,15 @@
 	            );
 	        }
 	    }]);
-	    return CardsBoard;
+	    return FlipCardBoard;
 	}(_react2.default.Component);
 
-	CardsBoard.defaultProps = {
+	FlipCardBoard.defaultProps = {
 	    cards: [],
 	    onCardClick: function onCardClick() {}
 	};
 
-	exports.default = CardsBoard;
+	exports.default = FlipCardBoard;
 
 /***/ },
 /* 2 */
@@ -316,7 +315,7 @@
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-	module.exports = {"content":"cardsBoard__content___3csz0"};
+	module.exports = {"content":"flipCardBoard__content___6KwVP"};
 
 /***/ }
 /******/ ]);

@@ -1,5 +1,5 @@
 import React from 'react';
-import CardsBoard from '../components/cardsBoard/CardsBoard';
+import FlipCardBoard from '../components/flipCardBoard/FlipCardBoard';
 import styles from './style.css';
 import {FlipCardGame, flipCardGameEvents} from 'flip-card-game';
 
@@ -79,8 +79,9 @@ export default class LoginPage extends React.Component {
                     {playersNodes}
                 </select>
 
-                <CardsBoard cards={this.state.cards}
-                            onCardClick={this.onCardClickHandler}/>
+                <FlipCardBoard
+                    cards={this.state.cards}
+                    onCardClick={this.onCardClickHandler}/>
             </div>
         );
     }

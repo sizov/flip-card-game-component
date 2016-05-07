@@ -1,8 +1,8 @@
 import React from 'react';
 import Card from '../../components/card/Card';
-import styles from './cardsBoard.css';
+import styles from './flipCardBoard.css';
 
-class CardsBoard extends React.Component {
+class FlipCardBoard extends React.Component {
 
     constructor(props) {
         super(props);
@@ -34,10 +34,10 @@ class CardsBoard extends React.Component {
     }
 }
 
-CardsBoard.defaultProps = {
+FlipCardBoard.defaultProps = {
     cards: [],
     onCardClick: function () {
     }
 };
 
-export default CardsBoard;
+export default FlipCardBoard;

@@ -9,7 +9,7 @@
     "build": "webpack --progress --config webpack.production.config.js",
     "test": "nyc ava --fail-fast --verbose --require babel-register",
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
-    "clean": "rm build/app.js"
+    "clean": "rm dist/flip-card-game-component.js"
   },
   "repository": {
     "type": "git",
@@ -42,7 +42,7 @@
     "enzyme": "^2.0.0",
     "express": "^4.12.3",
     "extract-text-webpack-plugin": "^0.8.2",
-    "flip-card-game": "git@github.com:sizov/flip-card-game.git#v0.0.8",
+    "flip-card-game": "git@github.com:sizov/flip-card-game.git#v0.0.9",
     "nyc": "^5.6.0",
     "postcss-loader": "^0.6.0",
     "postcss-nested": "^1.0.0",

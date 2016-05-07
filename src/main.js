@@ -1,2 +1,2 @@
-import CardsBoard from './components/cardsBoard/CardsBoard';
-export {CardsBoard as FlipCardGame};
+import FlipCardBoard from './components/flipCardBoard/FlipCardBoard';
+export default FlipCardBoard;
