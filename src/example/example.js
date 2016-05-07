@@ -1,7 +1,7 @@
 import React from 'react';
 import CardsBoard from '../components/cardsBoard/CardsBoard';
 import styles from './style.css';
-import {FlipCardGame, flipCardGameEvents} from 'flip-card-game/dist/flip-card-game';
+import {FlipCardGame, flipCardGameEvents} from 'flip-card-game';
 
 const getCard = (flipped, id, image) => ({flipped, id, image});
 const game = new FlipCardGame();
