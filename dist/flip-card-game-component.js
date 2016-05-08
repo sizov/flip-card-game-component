@@ -1,4 +1,14 @@
-/******/ (function(modules) { // webpackBootstrap
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory(require("babel-runtime/core-js/object/get-prototype-of"), require("babel-runtime/helpers/classCallCheck"), require("babel-runtime/helpers/createClass"), require("babel-runtime/helpers/possibleConstructorReturn"), require("babel-runtime/helpers/inherits"), require("react"), require("babel-runtime/helpers/defineProperty"), require("classnames"));
+	else if(typeof define === 'function' && define.amd)
+		define(["babel-runtime/core-js/object/get-prototype-of", "babel-runtime/helpers/classCallCheck", "babel-runtime/helpers/createClass", "babel-runtime/helpers/possibleConstructorReturn", "babel-runtime/helpers/inherits", "react", "babel-runtime/helpers/defineProperty", "classnames"], factory);
+	else {
+		var a = typeof exports === 'object' ? factory(require("babel-runtime/core-js/object/get-prototype-of"), require("babel-runtime/helpers/classCallCheck"), require("babel-runtime/helpers/createClass"), require("babel-runtime/helpers/possibleConstructorReturn"), require("babel-runtime/helpers/inherits"), require("react"), require("babel-runtime/helpers/defineProperty"), require("classnames")) : factory(root["babel-runtime/core-js/object/get-prototype-of"], root["babel-runtime/helpers/classCallCheck"], root["babel-runtime/helpers/createClass"], root["babel-runtime/helpers/possibleConstructorReturn"], root["babel-runtime/helpers/inherits"], root["react"], root["babel-runtime/helpers/defineProperty"], root["classnames"]);
+		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
+	}
+})(this, function(__WEBPACK_EXTERNAL_MODULE_2__, __WEBPACK_EXTERNAL_MODULE_3__, __WEBPACK_EXTERNAL_MODULE_4__, __WEBPACK_EXTERNAL_MODULE_5__, __WEBPACK_EXTERNAL_MODULE_6__, __WEBPACK_EXTERNAL_MODULE_7__, __WEBPACK_EXTERNAL_MODULE_9__, __WEBPACK_EXTERNAL_MODULE_10__) {
+return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 
@@ -49,6 +59,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+	exports.FlipCardBoard = undefined;
 
 	var _FlipCardBoard = __webpack_require__(1);
 
@@ -56,7 +67,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	exports.default = _FlipCardBoard2.default;
+	exports.FlipCardBoard = _FlipCardBoard2.default;
 
 /***/ },
 /* 1 */
@@ -318,4 +329,6 @@
 	module.exports = {"content":"flipCardBoard__content___6KwVP"};
 
 /***/ }
-/******/ ]);
+/******/ ])
+});
+;

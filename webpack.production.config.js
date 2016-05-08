@@ -1,20 +1,22 @@
 var webpack = require('webpack');
 var nodeExternals = require('webpack-node-externals');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var PACKAGE_JSON = require('./package.json');
 
 /**
  * This is the Webpack configuration file for production.
  */
 module.exports = {
-    entry: "./src/main",
+    entry: "./src/index",
 
     target: 'node', // in order to ignore built-in modules like path, fs, etc.
 
     externals: [nodeExternals()], // in order to ignore all modules in node_modules folder
 
     output: {
+        libraryTarget: 'umd',
         path: __dirname + "/dist/",
-        filename: "flip-card-game-component.js"
+        filename: PACKAGE_JSON.name + ".js"
     },
 
     plugins: [
@@ -39,4 +41,4 @@ module.exports = {
         require('autoprefixer'),
         require('postcss-nested')
     ]
-}
+};
