@@ -18,7 +18,7 @@ function getCards(nativeGameGards) {
     });
 }
 
-export default class LoginPage extends React.Component {
+export default class Example extends React.Component {
 
     constructor(props) {
         super(props);

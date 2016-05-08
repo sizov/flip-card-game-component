@@ -3,6 +3,9 @@
   "version": "0.1.1",
   "description": "A minimal skeleton for building testable React apps using Babel",
   "main": "dist/flip-card-game-component.js",
+  "files": [
+    "dist/"
+  ],
   "scripts": {
     "postinstall": "npm run build",
     "server": "node start.js",
@@ -21,7 +24,7 @@
     "react",
     "quickstart"
   ],
-  "author": "Mark Fayngersh",
+  "author": "Volodymyr Syzov",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/pheuter/essential-react/issues"
