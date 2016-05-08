@@ -1,6 +1,6 @@
 {
   "name": "flip-card-game-component",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Simple FliCardBoard React component",
   "main": "dist/flip-card-game-component.js",
   "files": [
