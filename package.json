@@ -1,6 +1,6 @@
 {
   "name": "flip-card-game-component",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A minimal skeleton for building testable React apps using Babel",
   "main": "dist/flip-card-game-component.js",
   "files": [
