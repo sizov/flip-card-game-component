@@ -1,35 +1,20 @@
 {
   "name": "flip-card-game-component",
   "version": "0.1.2",
-  "description": "A minimal skeleton for building testable React apps using Babel",
+  "description": "Simple FliCardBoard React component",
   "main": "dist/flip-card-game-component.js",
   "files": [
     "dist/"
   ],
   "scripts": {
-    "postinstall": "npm run build",
     "server": "node start.js",
     "build": "webpack --progress --config webpack.production.config.js",
     "test": "nyc ava --fail-fast --verbose --require babel-register",
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
     "clean": "rm dist/flip-card-game-component.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/pheuter/essential-react.git"
-  },
-  "keywords": [
-    "skeleton",
-    "template",
-    "react",
-    "quickstart"
-  ],
   "author": "Volodymyr Syzov",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/pheuter/essential-react/issues"
-  },
-  "homepage": "https://github.com/pheuter/essential-react",
   "devDependencies": {
     "autoprefixer": "^6.0.2",
     "ava": "^0.12.0",
